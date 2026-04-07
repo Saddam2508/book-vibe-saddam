@@ -8,17 +8,18 @@ const BookDetails = () => {
     const expectedBooks = books.find((book)=>book.bookId === Number(paramsId.id))
     const {bookName, image, author, category, rating, tags, review, totalPages, publisher, yearOfPublishing} = expectedBooks;
     return (
- <div className="grid grid-cols-2 bg-base-100 shadow-sm">
-  <figure className='flex justify-center items-center bg-base-300 p-10'>
+<div className='container mx-auto'>
+     <div className="grid grid-cols-2 bg-base-100 gap-6 py-12">
+  <figure className='flex justify-center items-center bg-base-300 p-10 rounded-lg'>
     <img
     className='h-full w-[350px] rounded-lg'
       src={image}
       alt={bookName} />
   </figure>
-  <div className="card-body">
+  <div className="flex flex-col gap-6">
     <h2 className="card-title text-3xl">{bookName}</h2>
     <p> By: {author}</p>
-    <p className='border-t border-b border-gray-300 py-2'>{category}</p>
+    <p className='border-t border-b border-gray-300 py-4'>{category}</p>
     <p> <span className='font-bold'>Review :</span> {review}</p>
    <div className='flex gap-2'>
      <span className='font-bold'>Tag :</span>{tags.map((tag) => (
@@ -28,8 +29,8 @@ const BookDetails = () => {
           ))}
    </div>
    
-    <div className="border-t border-gray-300 pt-3 space-y-3">
-    <div className='flex justify-between items-center gap-2'>
+    <div className="border-t border-gray-300 space-y-3">
+    <div className='flex justify-between items-center gap-2 pt-3'>
     <span>Number of Pages :</span> <span>{totalPages}</span>
    </div>
    <div className='flex justify-between items-center gap-2'>
@@ -47,6 +48,7 @@ const BookDetails = () => {
       </div>
     </div>
   </div>
+</div>
 </div>
     );
 };
