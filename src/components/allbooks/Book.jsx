@@ -1,11 +1,19 @@
 import React from "react";
 import { FaRegStar } from "react-icons/fa";
 import { Link } from "react-router";
+import { motion } from "framer-motion";
 
 const Book = ({ book }) => {
   const { bookId, bookName, image, author, category, rating, tags } = book;
   return (
-    <Link to={`/bookDetails/${bookId}`} className="card bg-base-100  shadow-md p-5 ">
+    <motion.div initial={{opacity: 0, y: 150}}
+                whileInView={{opacity: 1, y: 0}}
+                viewport={{once: true}}
+                 transition={{
+                duration: 0.45,
+                ease: "easeOut",
+            }} >
+      <Link to={`/bookDetails/${bookId}`} className="card bg-base-100  shadow-md p-5 ">
       <figure className="p-6 bg-base-300">
         <img src={image} alt={bookName} className="rounded-xl h-[250px]"/>
       </figure>
@@ -27,6 +35,7 @@ const Book = ({ book }) => {
         </div>
       </div>
     </Link>
+    </motion.div>
   );
 };
 

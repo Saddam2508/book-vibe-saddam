@@ -34,26 +34,14 @@ const Navbar = () => {
             tabIndex="-1"
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
-            <li>
-              <a>Item 1</a>
+            {navItems.map((item) => (
+            <li key={item.path}>
+              <MyNavLink to={item.path}>{item.name}</MyNavLink>
             </li>
-            <li>
-              <a>Parent</a>
-              <ul className="p-2">
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a>Item 3</a>
-            </li>
+          ))}
           </ul>
         </div>
-        <h1 className="text-xl font-bold">Book Vibe</h1>
+        <h1 className="text-xl font-bold hidden sm:block">Book Vibe</h1>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">

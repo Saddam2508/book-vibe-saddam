@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react";
 import { useLoaderData, useParams } from "react-router";
 import { BookContext } from "../../context/BookContext";
-
 const BookDetails = () => {
   const paramsId = useParams();
   const books = useLoaderData();
@@ -9,7 +8,6 @@ const BookDetails = () => {
     (book) => book.bookId === Number(paramsId.id),
   );
   const {
-    bookId,
     bookName,
     image,
     author,
