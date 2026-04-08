@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { BookContext } from "../../context/BookContext";
 import Book from "../allbooks/Book";
 
@@ -26,7 +26,7 @@ const Wishlist = ({ sortingType }) => {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
-      {wishlist.map((book) => (
+      {filterWishlist.map((book) => (
         <Book key={book.bookId} book={book} />
       ))}
     </div>
