@@ -23,11 +23,11 @@ const BookDetails = () => {
   const { handleMarkAsRead, handleAddToWishlist } = useContext(BookContext);
 
   return (
-    <div className="container mx-auto">
-      <div className="grid grid-cols-2 bg-base-100 gap-6 py-12">
+    <div className="container mx-auto p-5">
+      <div className="sm:grid sm:grid-cols-2 bg-base-100 gap-6 py-12">
         <figure className="flex justify-center items-center bg-base-300 p-10 rounded-lg">
           <img
-            className="h-full w-[350px] rounded-lg"
+            className="h-full sm:h-[400px] md:h-[600px] w-[350px]  rounded-lg"
             src={image}
             alt={bookName}
           />
