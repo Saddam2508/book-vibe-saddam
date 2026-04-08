@@ -21,6 +21,13 @@ export function TriangleBar(props) {
 const Chart = () => {
     const { isRead } = useContext(BookContext);
     const colors = ['#8884d8', '#82ca9d', '#ffc658', '#ff7f50', '#00c49f', '#ffbb28'];
+    if (isRead.length === 0) {
+    return (
+      <div className="container mx-auto flex items-center justify-center h-[50vh] bg-gray-100 rounded-lg shadow-md">
+        <h2 className="text-2xl text-center mt-10">Your read list is empty.</h2>
+      </div>
+    );
+  }
     return (
         <div className='container mx-auto mt-10 '>
             <BarChart width={600} height={300} data={isRead} margin={margin} >
