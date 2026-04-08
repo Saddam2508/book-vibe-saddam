@@ -5,7 +5,7 @@ import MyNavLink from "../MyNavLink";
 const Navbar = () => {
   const navItems = [
     { name: "Home", path: "/" },
-    { name: "Listed Books", path: "/books" },
+    { name: "Listed Books", path: "/read-books" },
     { name: "Pages to Read", path: "/pages-to-read" },
   ];
 
